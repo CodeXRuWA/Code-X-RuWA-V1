@@ -10,7 +10,7 @@ const yts = require('yt-search')
 cmd({
     pattern: "song2",
     desc: "downlode songs",
-    category: "downlode",
+    category: "download",
     react: "🎵",
     filename: __filename
 },
@@ -66,7 +66,7 @@ await conn.sendMessage(from,{audio: {url:downloadUrl},mimetype:"audio/mpeg"},{qu
 cmd({
     pattern: "video2",
     desc: "downlode videos",
-    category: "downlode",
+    category: "download",
     react: "🎬",
     filename: __filename
 },
@@ -189,7 +189,7 @@ cmd(
 
 cmd(
   {
-    pattern: 'yta',
+    pattern: 'yts',
     alias: ['ytmp3'],
     react: '🎧',
     desc: 'Download YouTube videos as audio.',
