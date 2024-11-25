@@ -4,7 +4,7 @@ const config = require('../config');
 cmd({
     pattern: "vv",
     desc: "For Sve Viewonce msg.",
-    category: "main",
+    category: "convert",
     react: "👧🏻",
     filename: __filename
 },
