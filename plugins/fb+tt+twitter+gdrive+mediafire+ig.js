@@ -16,7 +16,7 @@ const yourName = "*©ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴄᴏᴅᴇXʀᴜᴡᴀ😈*";
 
 //fb downloader
 cmd({
-    pattern: "facebook",
+    pattern: "fb",
     alias: ["fb"],
     desc: "download fb videos",
     category: "download",
