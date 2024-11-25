@@ -12,8 +12,6 @@ let baseUrl;
 
 const yourName = "*©ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴄᴏᴅᴇXʀᴜᴡᴀ😈*";
 
-//apk downloader
-
 //fb downloader
 cmd({
     pattern: "fb",
@@ -27,7 +25,7 @@ async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, send
     try {
         if (!q && !q.startsWith("https://")) return reply("give me fb url")
         //fetch data from api  
-        let data = await fetchJson(`${baseUrl}/api/fdown?url=${q}`)
+        let data = await fetchJson(`https://www.dark-yasiya-api.site/download/fbdl1?url=${q}`)
         reply("*Downloading...*")
         //send video (hd,sd)
         await conn.sendMessage(from, { video: { url: data.data.hd }, mimetype: "video/mp4", caption: `- HD\n\n ${yourName}` }, { quoted: mek })
@@ -51,7 +49,7 @@ async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, send
     try {
         if (!q && !q.startsWith("https://")) return reply("give me tiktok url")
         //fetch data from api  
-        let data = await fetchJson(`${baseUrl}/api/tiktokdl?url=${q}`)
+        let data = await fetchJson(`https://www.dark-yasiya-api.site/download/tiktok?url=${q}`)
         reply("*Downloading...*")
         //send video (wm,nwm)
         await conn.sendMessage(from, { video: { url: data.data.no_wm }, mimetype: "video/mp4", caption: `- NO-WATERMARK\n\n ${yourName}` }, { quoted: mek })
