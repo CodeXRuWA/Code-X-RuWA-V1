@@ -5,7 +5,7 @@ cmd({
     pattern: "vv",
     desc: "For Sve Viewonce msg.",
     category: "convert",
-    react: "👧🏻",
+    react: "👁️‍🗨️",
     filename: __filename
 },
 async(conn, mek, m, message,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
