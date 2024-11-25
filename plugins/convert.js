@@ -68,7 +68,7 @@ cmd({
 
 cmd({
             pattern: "tts",
-            react: "❄️",
+            react: "🗣️",
             desc: "text to speech.",
             category: "convert",
             filename: __filename,
