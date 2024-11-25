@@ -8,7 +8,7 @@ const imgMsg = 'Reply to a photo for sticker!';
 const description = 'It converts your replied photo to a sticker.';
 
 cmd({
-  pattern: 'sticker',
+  pattern: 'st',
   react: '🧚',
   alias: ['s', 'stic'],
   desc: description,
@@ -65,38 +65,48 @@ cmd({
   }
 });
 
+const googleTTS = require("google-tts-api");
+
 cmd({
-  pattern: 'tts',
-  desc: 'download songs',
-  category: 'download',
-  react: '📥',
-  filename: __filename,
-}, async (message, match, extra, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-  try {
-    if (!q) {
-      return reply('Need some text.');
-    }
-    const audioUrl = googleTTS.getAudioUrl(q, {
-      lang: 'hi-IN',
-      slow: false,
-      host: 'https://translate.google.com',
-    });
-    await message.sendMessage(from, {
-      audio: { url: audioUrl },
-      mimetype: 'audio/mpeg',
-      ptt: true,
-    }, { quoted });
-  } catch (error) {
-    reply('' + error);
-  }
+            pattern: "tts",
+            react: "🗣️",
+            desc: "text to speech.",
+            category: "convert",
+            filename: __filename,
+            use: '.tts <Im Ishara>',
+        },
+        async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+        try{
+          if (!q) return m.reply('Please give me Sentence to change into audio.')
+            let texttts = q
+            const ttsurl = googleTTS.getAudioUrl(texttts, {
+                lang: "en",
+                slow: false,
+                host: "https://translate.google.com",
+            });
+            return conn.sendMessage( m.chat, {
+                audio: {
+                    url: ttsurl,
+                },
+                mimetype: "audio/mpeg",
+                fileName: `ttsCitelVoid.m4a`,
+            }, {
+                quoted: mek,
+            });
+
+                
+} catch (e) {
+reply('*Error !!*')
+l(e)
+}
 });
 
 cmd({
   pattern: 'trt',
   alias: ['translate'],
   desc: '🌍 Translate text between languages',
-  react: '⚡',
-  category: 'other',
+  react: '🔤',
+  category: 'convert',
   filename: __filename,
 }, async (message, match, extra, { from, q, reply }) => {
   try {
