@@ -13,7 +13,7 @@ cmd({
   alias: ['s', 'stic'],
   desc: description,
   category: 'convert',
-  use: '.sticker <Reply to image>',
+  use: '.st <Reply to image>',
   filename: __filename,
 }, async (message, match, extra, { from, reply, isCmd, command, args, q, isGroup, pushname }) => {
   try {
@@ -65,11 +65,10 @@ cmd({
   }
 });
 
-const googleTTS = require("google-tts-api");
 
 cmd({
             pattern: "tts",
-            react: "🗣️",
+            react: "❄️",
             desc: "text to speech.",
             category: "convert",
             filename: __filename,
@@ -100,6 +99,7 @@ reply('*Error !!*')
 l(e)
 }
 });
+
 
 cmd({
   pattern: 'trt',
