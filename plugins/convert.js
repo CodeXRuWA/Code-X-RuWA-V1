@@ -121,7 +121,7 @@ cmd({
     const response = await axios.get(apiUrl);
     const translatedText = response.data.responseData.translatedText;
     const responseMessage = `
-🌍 *ᴄᴏᴅᴇXʀᴜᴡᴀ-ᴠ1 TRANSLATION* 🌍
+🌍 *ᴄᴏᴅᴇXʀᴜᴡᴀ-ᴠ1 TRANSLATION*
 
 📜 *Original*: ${textToTranslate}
 
