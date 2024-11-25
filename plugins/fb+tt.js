@@ -3,7 +3,7 @@ const config = require('../config')
 const { cmd, commands } = require('../command')
 
 cmd({
-    pattern: "fb2",
+    pattern: "fb",
     alias: ["facebook"],
     desc: "download fb videos",
     category: "download",
@@ -50,7 +50,7 @@ const response = await conn.sendMessage(from, { text: '*Your facebook video is d
 
 
 cmd({
-    pattern: "tt2",
+    pattern: "tt",
     alias: ["tiktok"],
     desc: "download tiktok videos",
     category: "download",
